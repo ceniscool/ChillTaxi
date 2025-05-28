@@ -224,17 +224,17 @@ class TrickOrTreatView(View):
 
     @discord.ui.button(label="Trick or Treat 😈", style=discord.ButtonStyle.success)
     async def trick_or_treat_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        outcomes = [
+         outcomes = [
             ("🍬 Treat!", "You got some delicious Halloween candy! Enjoy your sugar rush!"),
             ("👻 Trick!", "Boo! A ghost jumped out and scared you! Better luck next time."),
             ("🕷️ Trick!", "A spider fell on your head! Spooky!"),
             ("🍭 Treat!", "You found a rare glowing lollipop! Lucky you."),
             ("💀 Trick!", "A skeleton danced aggressively at you. It was awkward."),
-            ("🎉 Treat!", "Someone gave you a full-sized candy bar! Jackpot!")
+            ("🎉 Treat!", "Someone gave you a full-sized candy bar! Jackpot!"),
             ("🧛‍♂️ Trick!", "A vampire tried to bite you, but you escaped!"),
             ("🎃 Treat!", "You found a pumpkin full of candy! Time to celebrate Halloween!"),
             ("👽 Trick!", "An alien tried to abduct you, but you managed to run away!"),
-            ("🦇 Treat!", "A friendly bat gave you a piece of candy! How nice!")
+            ("🦇 Treat!", "A friendly bat gave you a piece of candy! How nice!"),
             ("🧙‍♀️ Trick!", "A witch tried to cast a spell on you, but you dodged it!"),
             ("👹 Treat!", "You found a treasure chest filled with candy!"),
             ("👺 Trick!", "A goblin tried to trick you, but you saw through it!"),
