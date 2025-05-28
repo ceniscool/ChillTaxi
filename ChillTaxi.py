@@ -222,9 +222,9 @@ class TrickOrTreatView(View):
     def __init__(self):
         super().__init__(timeout=30)
 
-    @discord.ui.button(label="Trick or Treat 😈", style=discord.ButtonStyle.success)
+        @discord.ui.button(label="Trick or Treat 😈", style=discord.ButtonStyle.success)
     async def trick_or_treat_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-         outcomes = [
+        outcomes = [
             ("🍬 Treat!", "You got some delicious Halloween candy! Enjoy your sugar rush!"),
             ("👻 Trick!", "Boo! A ghost jumped out and scared you! Better luck next time."),
             ("🕷️ Trick!", "A spider fell on your head! Spooky!"),
@@ -246,17 +246,6 @@ class TrickOrTreatView(View):
         embed = discord.Embed(title=title, description=message, color=discord.Color.purple())
         await interaction.response.send_message(embed=embed, ephemeral=True)
         self.stop()
-
-@client.tree.command(name="trick_or_treat", description="Halloween Trick or Treat")
-async def trick_or_treat(interaction: discord.Interaction):
-    embed = discord.Embed(
-        title="🎃 Trick or Treat!",
-        description="It's Halloween night... do you dare press the button?\nYou might get candy... or something *creepy*!",
-        color=discord.Color.orange()
-    )
-    embed.set_footer(text="Happy Halloween! 👻")
-    await interaction.response.send_message(embed=embed, view=TrickOrTreatView())
-
 #info about
 
 @client.tree.command(name="knowabout", description="Know more about your peers!")
