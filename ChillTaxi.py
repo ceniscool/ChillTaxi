@@ -217,35 +217,6 @@ async def sync(interaction: discord.Interaction):
     else:
         await interaction.response.send_message('You must be the owner of this bot to use this command!')
 
-# end of sync
-class TrickOrTreatView(View):
-    def __init__(self):
-        super().__init__(timeout=30)
-
-        @discord.ui.button(label="Trick or Treat 😈", style=discord.ButtonStyle.success)
-    async def trick_or_treat_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        outcomes = [
-            ("🍬 Treat!", "You got some delicious Halloween candy! Enjoy your sugar rush!"),
-            ("👻 Trick!", "Boo! A ghost jumped out and scared you! Better luck next time."),
-            ("🕷️ Trick!", "A spider fell on your head! Spooky!"),
-            ("🍭 Treat!", "You found a rare glowing lollipop! Lucky you."),
-            ("💀 Trick!", "A skeleton danced aggressively at you. It was awkward."),
-            ("🎉 Treat!", "Someone gave you a full-sized candy bar! Jackpot!"),
-            ("🧛‍♂️ Trick!", "A vampire tried to bite you, but you escaped!"),
-            ("🎃 Treat!", "You found a pumpkin full of candy! Time to celebrate Halloween!"),
-            ("👽 Trick!", "An alien tried to abduct you, but you managed to run away!"),
-            ("🦇 Treat!", "A friendly bat gave you a piece of candy! How nice!"),
-            ("🧙‍♀️ Trick!", "A witch tried to cast a spell on you, but you dodged it!"),
-            ("👹 Treat!", "You found a treasure chest filled with candy!"),
-            ("👺 Trick!", "A goblin tried to trick you, but you saw through it!"),
-            ("🕸️ Treat!", "You found a web of candy! Sweet and sticky!"),
-            ("🦄 Treat!", "A unicorn gave you a magical candy! It sparkles!"),
-            ("🎃 Trick!", "A jack-o'-lantern scared you, but it was just a decoration!")
-        ]
-        title, message = random.choice(outcomes)
-        embed = discord.Embed(title=title, description=message, color=discord.Color.purple())
-        await interaction.response.send_message(embed=embed, ephemeral=True)
-        self.stop()
 #info about
 
 @client.tree.command(name="knowabout", description="Know more about your peers!")
